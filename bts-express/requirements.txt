@@ -1,0 +1,3 @@
+# Faqat bulut rejimi uchun (lokal ishga tushirish uchun hech narsa o'rnatish shart emas - Python standart kutubxonasi yetadi)
+psycopg2-binary>=2.9,<3     # PostgreSQL (Amazon RDS)
+boto3>=1.34                 # S3, CloudWatch, Secrets Manager

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" font-family="Arial, Helvetica, sans-serif" font-size="13">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#334155"/></marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7c3aed"/></marker>
+    <marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#db2777"/></marker>
+  </defs>
+  <rect width="1000" height="620" fill="#ffffff"/>
+  <text x="500" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#0f172a">BTS Express - AWS bulut arxitekturasi</text>
+
+  <rect x="20" y="215" width="130" height="76" rx="8" fill="#f1f5f9" stroke="#64748b"/>
+  <text x="85" y="243" text-anchor="middle" font-weight="bold">Foydalanuvchilar</text>
+  <text x="85" y="261" text-anchor="middle" fill="#475569" font-size="12">Admin / Operator</text>
+  <text x="85" y="277" text-anchor="middle" fill="#475569" font-size="12">Kuryer / Mijoz</text>
+
+  <rect x="190" y="50" width="790" height="555" rx="10" fill="#fff" stroke="#f59e0b" stroke-width="2" stroke-dasharray="7 4"/>
+  <text x="205" y="70" font-weight="bold" fill="#b45309">AWS Region (eu-central-1)</text>
+  <rect x="210" y="85" width="525" height="335" rx="8" fill="#f0f9ff" stroke="#0284c7"/>
+  <text x="222" y="104" font-weight="bold" fill="#0369a1">VPC (default)</text>
+
+  <rect x="235" y="125" width="250" height="170" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="360" y="148" text-anchor="middle" font-weight="bold" fill="#9a3412">Amazon EC2 (t3.micro)</text>
+  <text x="360" y="165" text-anchor="middle" fill="#475569" font-size="12">Amazon Linux 2023</text>
+  <rect x="255" y="175" width="210" height="32" rx="5" fill="#fff" stroke="#ea580c"/>
+  <text x="360" y="196" text-anchor="middle" font-size="12">nginx :80 / :443 (rate-limit)</text>
+  <rect x="255" y="213" width="210" height="32" rx="5" fill="#fff" stroke="#ea580c"/>
+  <text x="360" y="234" text-anchor="middle" font-size="12">BTS Express (Python) :8000</text>
+  <text x="360" y="264" text-anchor="middle" fill="#475569" font-size="12">systemd + CloudWatch Agent</text>
+  <text x="360" y="281" text-anchor="middle" fill="#475569" font-size="12">Security Group: web</text>
+
+  <rect x="525" y="125" width="190" height="170" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="620" y="148" text-anchor="middle" font-weight="bold" fill="#1e40af">Amazon RDS</text>
+  <text x="620" y="166" text-anchor="middle">PostgreSQL 16</text>
+  <text x="620" y="190" text-anchor="middle" fill="#475569" font-size="12">shifrlangan, 7 kunlik zaxira</text>
+  <text x="620" y="208" text-anchor="middle" fill="#475569" font-size="12">Publicly accessible: YO'Q</text>
+  <text x="620" y="262" text-anchor="middle" fill="#475569" font-size="12">Security Group: db</text>
+  <text x="620" y="279" text-anchor="middle" fill="#475569" font-size="12">5432 faqat "web" SG dan</text>
+
+  <rect x="235" y="335" width="250" height="60" rx="8" fill="#faf5ff" stroke="#7c3aed"/>
+  <text x="360" y="360" text-anchor="middle" font-weight="bold" fill="#5b21b6">IAM rol (instance profile)</text>
+  <text x="360" y="378" text-anchor="middle" fill="#475569" font-size="12">minimal huquq, access key yo'q</text>
+
+  <rect x="525" y="335" width="190" height="60" rx="8" fill="#faf5ff" stroke="#7c3aed"/>
+  <text x="620" y="360" text-anchor="middle" font-weight="bold" fill="#5b21b6">Secrets Manager</text>
+  <text x="620" y="378" text-anchor="middle" fill="#475569" font-size="12">DB paroli, admin paroli</text>
+
+  <rect x="770" y="125" width="195" height="115" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="867" y="150" text-anchor="middle" font-weight="bold" fill="#166534">Amazon S3</text>
+  <text x="867" y="170" text-anchor="middle" font-size="12">yo'l varaqalari, isbot rasmlari,</text>
+  <text x="867" y="186" text-anchor="middle" font-size="12">CSV eksportlar</text>
+  <text x="867" y="208" text-anchor="middle" fill="#475569" font-size="12">yopiq bucket, SSE-AES256,</text>
+  <text x="867" y="224" text-anchor="middle" fill="#475569" font-size="12">5 daqiqalik presigned havola</text>
+
+  <rect x="770" y="300" width="195" height="100" rx="8" fill="#fdf2f8" stroke="#db2777" stroke-width="2"/>
+  <text x="867" y="325" text-anchor="middle" font-weight="bold" fill="#9d174d">Amazon CloudWatch</text>
+  <text x="867" y="345" text-anchor="middle" font-size="12">metrikalar (CPU, xotira, 5xx)</text>
+  <text x="867" y="361" text-anchor="middle" font-size="12">loglar, alarmlar</text>
+  <text x="867" y="383" text-anchor="middle" fill="#475569" font-size="12">alarm -> SNS -> email</text>
+
+  <rect x="770" y="440" width="195" height="32" rx="6" fill="#fff" stroke="#db2777"/>
+  <text x="867" y="461" text-anchor="middle" font-size="12">Administrator e-pochtasi</text>
+
+  <!-- arrows -->
+  <path d="M150 253 L233 225" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <text x="152" y="214" fill="#334155" font-size="12">HTTP(S)</text>
+  <path d="M485 229 L525 229" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <text x="487" y="246" fill="#334155" font-size="10">SQL/TLS</text>
+  <path d="M400 125 V110 H867 V125" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <text x="560" y="106" fill="#334155" font-size="11">boto3: S3 API (HTTPS)</text>
+  <path d="M485 282 H502 V314 H745 V350 H770" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <text x="520" y="326" fill="#334155" font-size="11">metrika + log</text>
+  <path d="M360 335 V297" stroke="#7c3aed" stroke-width="2" fill="none" marker-end="url(#g)"/>
+  <text x="368" y="320" fill="#7c3aed" font-size="11">rol huquqi</text>
+  <path d="M485 365 H525" stroke="#7c3aed" stroke-width="2" fill="none" marker-end="url(#g)"/>
+  <path d="M867 400 V440" stroke="#db2777" stroke-width="2" fill="none" marker-end="url(#p)"/>
+  <text x="875" y="425" fill="#9d174d" font-size="11">SNS</text>
+
+  <rect x="210" y="440" width="525" height="150" rx="8" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="225" y="462" font-weight="bold">Ochiq portlar va ularning sabablari</text>
+  <text x="225" y="484" font-size="12">80 / 443 (hamma) - ilovaga brauzer orqali kirish, HTTPS sertifikati</text>
+  <text x="225" y="504" font-size="12">22 - yopiq (EC2'ga SSM Session Manager orqali kiriladi) yoki faqat admin IP</text>
+  <text x="225" y="524" font-size="12">5432 - faqat "web" Security Group'dan, Internetdan ochiq emas</text>
+  <text x="225" y="544" font-size="12">8000 - tashqariga ochilmaydi (faqat nginx lokal ulanadi)</text>
+  <text x="225" y="568" font-size="12">IAM: S3 faqat bts/* , 2 ta sir, faqat o'z namespace metrikalari</text>
+</svg>

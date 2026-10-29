@@ -1,0 +1,25 @@
+[Unit]
+Description=BTS Express Pochta Tizimi
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=bts
+Group=bts
+WorkingDirectory=/opt/bts-express
+# Maxfiy bo'lmagan sozlamalar (host, bucket nomi...). Parollar bu yerda EMAS - Secrets Manager'dan olinadi.
+EnvironmentFile=/etc/bts-express.env
+ExecStart=/opt/bts-express/venv/bin/python server.py
+Restart=always
+RestartSec=3
+StandardOutput=append:/var/log/bts-express/app.log
+StandardError=append:/var/log/bts-express/app.log
+# Qo'shimcha himoya
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/var/log/bts-express /opt/bts-express/data
+
+[Install]
+WantedBy=multi-user.target

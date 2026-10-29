@@ -1,0 +1,9 @@
+data/
+__pycache__/
+*.pyc
+.env
+*.pem
+*.key
+deploy/*.local
+deploy/config.env
+deploy/.state*
